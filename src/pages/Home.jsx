@@ -3,7 +3,7 @@ import Slider from '../components/specific/Slider';
 import FlipCountdown from '@rumess/react-flip-countdown';
 import FlashDealCard from '../components/specific/FlashDealCard';
 import axiosInstance from '../services/axiosInstance';
-import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+import {Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -101,7 +101,7 @@ const Home = () => {
           }}
           className='justify-center mx-auto '
         >
-          {dataProductDiscount.map((item, index) => (
+          {dataProductDiscount && dataProductDiscount.map((item, index) => (
             <SwiperSlide key={index}>
               <div className='grid grid-cols-1 gap-4 p-4'>
                 <FlashDealCard data={item} />
@@ -114,7 +114,7 @@ const Home = () => {
     <div className='Mobile_Game mx-auto max-w-7xl px-4 py-6 sm:px-6 md:pt-8 lg:px-8'>
       <div class="pl-5 mb-2 flex items-center justify-between"><h2 class="text-lg font-bold uppercase leading-5 tracking-wider text-primary-400 md:text-xl">Mobile Game</h2></div>
       <div className='grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-4 xl:grid-cols-5 xl:gap-4'>
-        {dataProduct.map((item,index)=>(
+        {dataProduct && dataProduct.map((item,index)=>(
           <GameCard data={item} key={index}/>
         ))}
       </div>
